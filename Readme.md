@@ -45,3 +45,6 @@ And we will set ut a new app for you.
 ## Web browser:
 Open: 
 http://localhost:8000/bimsync
+
+## Screenshot
+![Screenshot of bimsync-client example](bimsync_api_client.png?raw=true "Optional Title")
