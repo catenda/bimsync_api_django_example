@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Viewer UI demo</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.ico"/>
+    <style>
+        body {
+          font-family: Arial;
+          font-size: 14px;
+        }
+        #viewer-2d-container {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          width: 400px;
+          height: 250px;
+        }
+        #viewer-2d {
+          height: 100%;
+        }
+        #viewer-container {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+          overflow-y: hidden;
+        }
+        #viewer {
+          height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="viewer-container">
+      <div id="viewer"
+              data-viewer="webgl" 
+              data-url="{{viewerUrl}}"
+              data-enable-touch="true" 
+              data-ui
+              data-enable-keyboard="true"
+              data-joystick-color="#ff0000"
+              data-joystick-position="bottom-center"
+              data-joystick-size="80"
+              data-joystick-hidden="false"
+              data-enable-context-menu="true"
+              data-viewer2d-id="viewer-2d"
+              data-enable-viewer2d-integration="true"
+              data-show-viewer2d-storey-select="true"
+              data-show-viewer2d-locked-navigation-toggle="true"
+              data-translucent-opacity="0.2">
+      </div>
+    </div>
+
+    <div id="viewer-2d-container">
+      <div id="viewer-2d" data-viewer2d="svg" data-url="{{viewer2dUrl}}">
+      </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      var bimsync = bimsync || {};
+      bimsync.viewerhost = "http://localhost:8081";
+      bimsync.vieweruihost = "http://localhost:8081";
+      bimsync.viewer2dhost = "http://localhost:8081";
+    </script>
+    <script src="http://localhost:8089/1.0/js/viewer.js"></script>
+    <script src="http://localhost:8089/1.0/js/viewer2d.js"></script>
+
+    <!-- <script src="https://api.bimsync.com/1.0/js/viewer.js"></script>
+    <script src="https://api.bimsync.com/1.0/js/viewer2d.js"></script> -->
+  </body>
+</html>
